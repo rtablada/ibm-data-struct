@@ -1,0 +1,17 @@
+{
+    "name": "rtablada/ibm-data-struct",
+    "description": "A quick library for creating string length data structures to communicate with IBM services",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Tablada",
+            "email": "ryan.tablada@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Rtablada\\": "src/"
+        }
+    }
+}
