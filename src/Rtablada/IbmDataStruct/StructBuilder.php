@@ -45,6 +45,11 @@ abstract class StructBuilder
 
 	public function __toString()
 	{
+		return $this->getString();
+	}
+
+	public function getString()
+	{
 		return $this->string;
 	}
 }
