@@ -3,6 +3,8 @@
 abstract class StructBuilder
 {
 
+	protected $defaultMutator;
+
 	protected $rules = array();
 
 	protected $string = '';
@@ -26,7 +28,7 @@ abstract class StructBuilder
 	protected function addValue($value, $properties)
 	{
 		if (!is_array($properties)) {
-			$properties = array('length' => $properties);
+			$properties = array($this->defaultMutator => $properties);
 		}
 
 		$this->string .= $this->mutateOnProperties($value, $properties);

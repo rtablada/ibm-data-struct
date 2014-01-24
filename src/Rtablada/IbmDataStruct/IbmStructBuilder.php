@@ -2,6 +2,8 @@
 
 class IbmStructBuilder extends StructBuilder
 {
+	protected $defaultMutator = 'length';
+
 	/**
 	 * Takes value and trims it, then fills
 	 * remaining length with whitespace.
