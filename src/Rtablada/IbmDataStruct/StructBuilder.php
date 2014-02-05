@@ -21,7 +21,9 @@ abstract class StructBuilder
 	public function setStruct(array $values = array())
 	{
 		foreach ($this->rules as $key => $properties) {
-			$this->addValue($values[$key], $properties);
+			if (isset($values[$key])) {
+				$this->addValue($values[$key], $properties);
+			}
 		}
 	}
 
