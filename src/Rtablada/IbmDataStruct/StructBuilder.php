@@ -23,6 +23,8 @@ abstract class StructBuilder
 		foreach ($this->rules as $key => $properties) {
 			if (isset($values[$key])) {
 				$this->addValue($values[$key], $properties);
+			} else {
+				$this->addValue('', $properties);
 			}
 		}
 	}
