@@ -5,6 +5,8 @@ class IbmStructBuilder extends StructBuilder
 	protected $defaultMutator = 'length';
 	
 	protected $padString = ' ';
+	
+	protected $padType = STR_PAD_RIGHT;
 
 	/**
 	 * Takes value and trims it, then fills
@@ -18,6 +20,6 @@ class IbmStructBuilder extends StructBuilder
 	{
 		$value = substr($value, 0, $length);
 
-		return str_pad($value, $length, $this->padString);
+		return str_pad($value, $length, $this->padString, $this->padType);
 	}
 }
