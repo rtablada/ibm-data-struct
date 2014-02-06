@@ -6,6 +6,8 @@ abstract class StructFactory
 
 	protected static $structBuilderType;
 
+	protected static $structDeconstructorType;
+
 	public function __construct(array $rules = array())
 	{
 		if (count($rules)) {
@@ -20,5 +22,14 @@ abstract class StructFactory
 		$builder = new $builderType($values, $rules);
 
 		return $builder->__toString();
+	}
+
+	public static function deconstruct($string, array $rules = array())
+	{
+		$rules = count($rules) ? $rules : static::$rules;
+		$builderType = static::$structDeconstructorType;
+		$builder = new $builderType($string, $rules);
+
+		return $builder->getAttributes();
 	}
 }
